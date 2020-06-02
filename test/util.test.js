@@ -1,4 +1,7 @@
-const { add, minus } = require("../util/util");
+const {
+  add,
+  minus
+} = require("../util/util");
 
 describe("Add", () => {
   describe("Success", () => {
@@ -22,4 +25,17 @@ describe("Add", () => {
   });
 });
 
-describe("Minus", () => {});
+describe("Minus", () => {
+  describe("Success", () => {
+    it("Should return the first argument minus the second", () => {
+      expect(minus(4, 2)).toBe(2);
+    });
+  });
+
+  describe("Fail", () => {
+    it("Should return an error if the first argument is not a number", () => {
+      expect(() => minus(2, "2")).toThrowError();
+    });
+  });
+
+});
